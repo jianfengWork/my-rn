@@ -1,3 +1,15 @@
+#### 运行
+```
+  cd my-rn  yarn install
+
+  + ios
+    - cd my-rn/ios  pod install
+    - cd my-rn  npm run ios
+
+  + android
+    - cd my-rn  npm run android
+```
+
 #### 比较 rn
 |区别  |web  |原生   |混合   |编译   |
 |:----:|:----:|:----:|:----:|:----:|
