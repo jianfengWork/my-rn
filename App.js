@@ -1,28 +1,22 @@
-import React, {Component} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Text,
-} from 'react-native';
+import React, { Component } from 'react';
+import { Router, Scene, Lightbox } from 'react-native-router-flux';
 
-class App extends Component {
+import Startup from './components/Startup';
+import List from './components/List';
+import AddDialog from './components/AddDialog';
+
+export default class App extends Component {
   render() {
     return (
-      <SafeAreaView>
-        <View style={styles.body}>
-          <Text style={{lineHeight: 100, textAlign: 'center'}}>Hello RN</Text>
-        </View>
-      </SafeAreaView>
+      <Router>
+        <Lightbox>
+          <Scene key="root">
+            <Scene key="startup" component={Startup} hideNavBar={true} initial={true} />
+            <Scene key="list" component={List} hideNavBar={true} />
+          </Scene>
+          <Scene key="adddialog" component={AddDialog} hideNavBar={true} />
+        </Lightbox>
+      </Router>
     );
   }
-};
-
-const styles = StyleSheet.create({
-  body: {
-    height: 100,
-    backgroundColor: '#00ADEF',
-  },
-});
-
-export default App;
+}
